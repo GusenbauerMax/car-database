@@ -16,6 +16,7 @@ namespace CarDatabase
             await FillCarModelsAsync(context);
             await FillPeronsAsync(context);
             await FillOwnershipsAsync(context);
+            printCarModels(await QueryCarModels(context));
             await PrintStatistics(context);
         }
 
@@ -23,7 +24,7 @@ namespace CarDatabase
         {
             foreach (var make in makes)
             {
-                Console.WriteLine(make);
+                Console.WriteLine(make.Make);
             }
         }
 
@@ -31,7 +32,7 @@ namespace CarDatabase
         {
             foreach (var model in models)
             {
-                Console.WriteLine(model);
+                Console.WriteLine(model.Model);
             }
         }
     }
